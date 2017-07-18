@@ -1,0 +1,35 @@
+[
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1b1"},        
+        "fromDate": "02/03/2017",
+        "toDate": "04/03/2017",
+        "days": "2",
+        "approved": false,
+        "requestedBy": {"$oid":"58ccef70b01dbd09833df1c1"}
+    },
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1b4"},        
+        "fromDate": "19/03/2017",
+        "toDate": "23/03/2017",
+        "days": "4",
+        "approved": true,
+        "requestedBy": {"$oid":"58ccef70b01dbd09833df1c1"}
+    },    
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1b2"},        
+        "fromDate": "03/05/2017",
+        "toDate": "05/05/2017",
+        "days": "2",
+        "approved": true,        
+        "requestedBy": {"$oid":"58ccef70b01dbd09833df1c2"}
+    },
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1b3"},        
+        "fromDate": "10/12/2017",
+        "toDate": "14/12/2017",
+        "days": "4",
+        "approved": true,        
+        "requestedBy": {"$oid":"58ccef70b01dbd09833df1c3"}
+        
+    }    
+]

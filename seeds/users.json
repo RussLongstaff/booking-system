@@ -1,0 +1,48 @@
+[
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1c1"},        
+        "email": "steven.smith@email.com",
+        "password": "$2a$08$/pMt3dlKoEog/RHlLJsBruvA9nhVPVOkiOenRSeNKG4K6Z1tMKw1i",
+        "firstName": "Steven",
+        "lastName": "Smith",
+        "email": "steven.smith@email.com",
+        "department": "Sales",
+        "bookings": [
+            {"$oid":"58ccef70b01dbd09833df1b1"}, 
+            {"$oid":"58ccef70b01dbd09833df1b4"}
+        ]  
+    },
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1c2"},        
+        "email": "jerry.j.jones@email.com",
+        "password": "$2a$08$/pMt3dlKoEog/RHlLJsBruvA9nhVPVOkiOenRSeNKG4K6Z1tMKw1i",
+        "firstName": "Jerry",
+        "lastName": "Jones",
+        "email": "jerry.j.jones@email.com",
+        "department": "Accounts",    
+        "bookings": [
+            {"$oid":"58ccef70b01dbd09833df1b2"}
+        ]         
+    },
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1c3"},        
+        "email": "wendycanfly@neverland.com",
+        "password": "$2a$08$/pMt3dlKoEog/RHlLJsBruvA9nhVPVOkiOenRSeNKG4K6Z1tMKw1i",
+        "firstName": "Wendy",
+        "lastName": "Williams",
+        "email": "wendycanfly@neverland.com",
+        "department": "HR",       
+        "bookings": [
+            {"$oid":"58ccef70b01dbd09833df1b3"}
+        ]         
+    },
+    {
+        "_id": {"$oid":"58ccef70b01dbd09833df1c4"},        
+        "email": "luke.skywalker@gmail.com",
+        "password": "$2a$08$/pMt3dlKoEog/RHlLJsBruvA9nhVPVOkiOenRSeNKG4K6Z1tMKw1i",
+        "firstName": "Luke",
+        "lastName": "Skywalker",
+        "email": "luke.skywalker@gmail.com",
+        "department": "Accounts"      
+    }    
+]

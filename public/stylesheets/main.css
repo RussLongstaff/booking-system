@@ -1,0 +1,15 @@
+/* Custom styles can go in here */
+
+.form-inline .allocated-days {
+    width: 50px;
+}
+
+.glyphicon-envelope.btn.btn-default.btn-sm,
+.glyphicon-calendar.btn.btn-default.btn-sm {
+    font-size: 16px;
+    padding: 0 6px;
+}
+
+.approve-yes {
+    margin-right: 5px;
+}

@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/booking_system",
+	"dev": "localhost/booking_system",
+	"prod": "localhost/booking_system"
+}

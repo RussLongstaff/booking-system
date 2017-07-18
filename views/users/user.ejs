@@ -1,0 +1,126 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1>Booking System <br /><small>Welcome <%= user.firstName %> <%= user.lastName %></small></h1>
+</div>
+<div class="container">
+    <h3>Bookings for:</h3>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-2">
+            <p><strong>Name</strong></p>    
+        </div>
+        <div class="col-md-3">
+            <p><%= user.firstName %> <%= user.lastName %></p>    
+        </div>
+        <div class="col-md-2">
+            <form><button class="btn btn-default btn-sm" disabled="disabled">Edit User</button></form>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-2">
+            <p><strong>Email Address</strong></p>    
+        </div>
+        <div class="col-md-3">
+            <p><%= user.email %></p>    
+        </div>
+        <div class="col-md-2">
+            <a href="mailto:<%= user.email %>"><span class="glyphicon glyphicon-envelope btn btn-default btn-sm" aria-hidden="true"></span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-2">
+            <p><strong>Department</strong></p>    
+        </div>
+        <div class="col-md-3">
+            <p><%= user.department %></p>     
+        </div>
+    </div>
+    <!-- input has a width of auto applied so this needs to be looked at -->
+    <form class="form-inline">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-2">
+                <p><strong>Allocated Days</strong></p>    
+            </div>
+            <div class="col-md-1">
+                <input type="text" class="form-control allocated-days" value="20" disabled="disabled">    
+            </div>                
+            <div class="col-md-2">
+                <button class="btn btn-default" disabled="disabled">Submit</button>    
+            </div>
+        </div>
+    </form>
+    <% if(user.bookings.length > 0) { /* check to see if you have bookings */ %>
+        <% if(unapprovedBooking) { /* check to see if any of the bookings are unapproved by checking flag set in route */ %>
+            <div class="row">
+                <h4 class="col-md-6 col-md-offset-2">Unapproved Requests</h4>                    
+            </div>
+            <div class="row">
+                <div class="table-responsive col-md-8 col-md-offset-2">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>From date</th>
+                                <th>To date</th>
+                                <th>Days</th>
+                                <th>Approve?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% user.bookings.forEach(function(booking){  /* loop through all bookings */ %>
+                                <% if(booking.approved === false) { /* output unapproved booking requests here */ %>  
+                                    <tr>
+                                        <td><%= booking.fromDate %></td>
+                                        <td><%= booking.toDate %></td>
+                                        <td><%= booking.days %></td>
+                                        <td>
+                                            <form>
+                                                <button class="btn btn-default btn-sm approve-yes" disabled="disabled">Yes</button>
+                                                <Button class="btn btn-default btn-sm" disabled="disabled">No</Button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            <% }); %>    
+                        </tbody>
+                    </table>        
+                </div>                
+            </div>
+        <% } %>
+        <% if(approvedBooking) { /* check to see if any of the bookings are approved by checking flag set in route*/%>
+            <div class="row">
+                <h4 class="col-md-6 col-md-offset-2">Approved Requests</h4>                
+            </div>
+            <div class="row">
+                <div class="table-responsive col-md-8 col-md-offset-2">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>From date</th>
+                                <th>To date</th>
+                                <th>Days</th>
+                                <th>Approved by</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% user.bookings.forEach(function(booking){  /* loop through all bookings */ %>
+                                <% if(booking.approved === true) { /* output unapproved booking requests here */ %>  
+                                    <tr>
+                                        <td><%= booking.fromDate %></td>
+                                        <td><%= booking.toDate %></td>
+                                        <td><%= booking.days %></td>
+                                        <td>line manager</td>
+                                    </tr>                
+                                <% } %>
+                            <% }); %>                        
+                        </tbody>
+                    </table>        
+                </div>                  
+            </div>
+        <% } %>
+    <% } else { /* if there are no booking requests output a link to make a new booking request */ %>
+        <p>You currently have no bookings.</p>
+        <a href="/user/<%= user._id %>/bookings/new">Make a new booking request</a>    
+    <% } %>
+</div>
+
+<% include ../partials/footer %>
